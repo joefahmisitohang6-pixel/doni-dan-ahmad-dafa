@@ -1,0 +1,158 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+  min-height:100vh;
+}
+
+.login-page{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.container{
+  width:950px;
+  height:560px;
+  background:rgba(255,255,255,0.1);
+  border-radius:25px;
+  overflow:hidden;
+  display:flex;
+  backdrop-filter:blur(15px);
+}
+
+.left-box{
+  width:50%;
+  color:white;
+  padding:50px;
+  background:rgba(255,255,255,0.05);
+}
+
+.left-box h1{
+  font-size:40px;
+  margin-bottom:20px;
+}
+
+.left-box p{
+  line-height:1.8;
+}
+
+.info-box{
+  margin-top:20px;
+  background:rgba(255,255,255,0.1);
+  padding:15px;
+  border-radius:15px;
+}
+
+.info-box h3{
+  color:gold;
+}
+
+.right-box{
+  width:50%;
+  background:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+form{
+  width:80%;
+}
+
+form h2{
+  text-align:center;
+  margin-bottom:40px;
+  color:#1e3a8a;
+}
+
+.input-box{
+  margin-bottom:25px;
+}
+
+.input-box input,
+.input-box select{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:12px;
+  background:#f1f5f9;
+}
+
+button{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:12px;
+  background:#2563eb;
+  color:white;
+  cursor:pointer;
+}
+
+.dashboard{
+  display:none;
+  padding:30px;
+  color:white;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:30px;
+}
+
+.logout{
+  width:180px;
+  background:red;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:rgba(255,255,255,0.1);
+  padding:20px;
+  border-radius:20px;
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+
+.card h2{
+  margin-bottom:10px;
+}
+
+.admin-color{
+  border-left:6px solid gold;
+}
+
+.user-color{
+  border-left:6px solid #00ffae;
+}
+
+.detail-box{
+  display:none;
+  margin-top:15px;
+  background:rgba(255,255,255,0.1);
+  padding:15px;
+  border-radius:15px;
+}
+
+.detail-box ul{
+  margin-left:20px;
+}
