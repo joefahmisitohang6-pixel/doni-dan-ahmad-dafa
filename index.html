@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMK NEGERI 13 MEDAN</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- LOGIN -->
+
+  <div class="login-page" id="loginPage">
+
+    <div class="container">
+
+      <div class="left-box">
+
+        <h1>SMK NEGERI 13 MEDAN</h1>
+
+        <p>
+          SMK Negeri 13 Medan merupakan sekolah menengah kejuruan yang memiliki
+          berbagai jurusan unggulan dan fokus dalam menciptakan siswa yang
+          disiplin, kreatif, berprestasi, serta siap memasuki dunia kerja.
+        </p>
+
+        <div class="info-box">
+          <h3>Login Admin</h3>
+          <p>Username : admin</p>
+          <p>Password : admin123</p>
+        </div>
+
+        <div class="info-box">
+          <h3>Login User</h3>
+          <p>Username : user</p>
+          <p>Password : user123</p>
+        </div>
+
+      </div>
+
+      <div class="right-box">
+
+        <form id="loginForm">
+
+          <h2>LOGIN SEKOLAH</h2>
+
+          <div class="input-box">
+            <input type="text" id="username" placeholder="Masukkan Username" required>
+          </div>
+
+          <div class="input-box">
+            <input type="password" id="password" placeholder="Masukkan Password" required>
+          </div>
+
+          <div class="input-box">
+            <select id="role">
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+
+          <button type="submit">MASUK</button>
+
+          <p id="message"></p>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- DASHBOARD ADMIN -->
+
+  <div class="dashboard" id="adminDashboard">
+
+    <div class="topbar">
+      <h1>Dashboard Admin</h1>
+      <button class="logout" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="cards">
+
+      <div class="card admin-color">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1000">
+        <h2>Data Siswa</h2>
+        <p>Mengelola data seluruh siswa sekolah.</p>
+
+        <button onclick="toggleDetail('siswa')">Lihat Detail</button>
+
+        <div class="detail-box" id="siswa">
+          <ul>
+            <li>Total Siswa : 350</li>
+            <li>Kelas X : 120 siswa</li>
+            <li>Kelas XI : 110 siswa</li>
+            <li>Kelas XII : 120 siswa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card admin-color">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1000">
+        <h2>Data Guru</h2>
+        <p>Mengelola data guru dan staf sekolah.</p>
+
+        <button onclick="toggleDetail('guru')">Lihat Detail</button>
+
+        <div class="detail-box" id="guru">
+          <ul>
+            <li>Total Guru : 45</li>
+            <li>Guru Produktif : 20</li>
+            <li>Guru Umum : 15</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card admin-color">
+        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1000">
+        <h2>Jurusan Sekolah</h2>
+        <p>Melihat seluruh jurusan sekolah.</p>
+
+        <button onclick="toggleDetail('jurusan')">Lihat Detail</button>
+
+        <div class="detail-box" id="jurusan">
+          <ul>
+            <li>1. Akuntansi</li>
+            <li>2. TKJ</li>
+            <li>3. Teknik Otomasi Industri</li>
+            <li>4. Perhotelan</li>
+            <li>5. Pemasaran</li>
+            <li>6. Pengelasan</li>
+            <li>7. Perfilman</li>
+            <li>8. Desain Grafis</li>
+            <li>9. Listrik</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card admin-color">
+        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?w=1000">
+        <h2>Absensi Sekolah</h2>
+        <p>Mengelola absensi siswa dan guru.</p>
+
+        <button onclick="toggleDetail('absensi')">Lihat Detail</button>
+
+        <div class="detail-box" id="absensi">
+          <ul>
+            <li>Hadir : 320 siswa</li>
+            <li>Izin : 15 siswa</li>
+            <li>Sakit : 10 siswa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card admin-color">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1000">
+        <h2>Pengumuman</h2>
+        <p>Mengelola pengumuman sekolah.</p>
+
+        <button onclick="toggleDetail('pengumuman')">Lihat Detail</button>
+
+        <div class="detail-box" id="pengumuman">
+          <ul>
+            <li>Ujian Semester : 20 Mei</li>
+            <li>Libur Nasional : 1 Juni</li>
+            <li>Pembagian Raport : 25 Juni</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- DASHBOARD USER -->
+
+  <div class="dashboard" id="userDashboard">
+
+    <div class="topbar">
+      <h1>Dashboard User</h1>
+      <button class="logout" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="cards">
+
+      <div class="card user-color">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1000">
+        <h2>Lihat Nilai</h2>
+
+        <button onclick="toggleDetail('nilaiuser')">Lihat Detail</button>
+
+        <div class="detail-box" id="nilaiuser">
+          <ul>
+            <li>Matematika : 88</li>
+            <li>Bahasa Indonesia : 90</li>
+            <li>Bahasa Inggris : 89</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card user-color">
+        <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?w=1000">
+        <h2>Jadwal Sekolah</h2>
+
+        <button onclick="toggleDetail('jadwaluser')">Lihat Detail</button>
+
+        <div class="detail-box" id="jadwaluser">
+          <ul>
+            <li>Senin : Matematika</li>
+            <li>Selasa : Bahasa Inggris</li>
+            <li>Rabu : IPS</li>
+            <li>Kamis : Seni Budaya</li>
+            <li>Jumat : Informatika</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card user-color">
+        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=1000">
+        <h2>Pengumuman</h2>
+
+        <button onclick="toggleDetail('info')">Lihat Detail</button>
+
+        <div class="detail-box" id="info">
+          <ul>
+            <li>Ujian Semester minggu depan</li>
+            <li>Gunakan seragam lengkap</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card user-color">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1000">
+        <h2>Absensi</h2>
+
+        <button onclick="toggleDetail('absensiuser')">Lihat Detail</button>
+
+        <div class="detail-box" id="absensiuser">
+          <ul>
+            <li>Hadir : 20 Hari</li>
+            <li>Izin : 1 Hari</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card user-color">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1000">
+        <h2>Tugas Sekolah</h2>
+
+        <button onclick="toggleDetail('tugasuser')">Lihat Detail</button>
+
+        <div class="detail-box" id="tugasuser">
+          <ul>
+            <li>Matematika : Halaman 25</li>
+            <li>Bahasa Inggris : Membuat dialog</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
